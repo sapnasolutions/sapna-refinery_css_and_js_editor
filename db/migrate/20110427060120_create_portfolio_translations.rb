@@ -18,7 +18,7 @@ class CreatePortfolioTranslations < ActiveRecord::Migration
   def self.down
     add_column :portfolios, :name, :string
     add_column :portfolios, :description, :text
-    PortfolioTranslation.all(:conditions => "locale=en").each do |p|
+    PortfolioTranslation.all(:conditions => {:locale => 'en'}).each do |p|
       Portfolio.find(p.portfolio_id).update_attributes(:name => p.name, :description => p.description)
     end
     drop_table :portfolio_translations
