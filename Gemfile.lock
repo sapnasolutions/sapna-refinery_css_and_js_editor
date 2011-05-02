@@ -62,6 +62,7 @@ GEM
     mime-types (1.16)
     moretea-awesome_nested_set (1.4.3.1)
       activerecord (~> 3.0.0)
+    mysql2 (0.2.7)
     nested_form (0.1.1)
     orm_adapter (0.0.4)
     polyglot (0.3.1)
@@ -149,6 +150,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  mysql2 (= 0.2.7)
   nested_form
   rails (= 3.0.6)
   refinerycms (= 0.9.9.16)
