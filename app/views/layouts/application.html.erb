@@ -1,0 +1,102 @@
+<html>
+<head>
+  <title>Sapnasolutions</title>
+	<% CssAndJsFile.css.each do |css|%>
+  	<%= stylesheet_link_tag css.name+'.css' , :cache => '_'+css.name %>
+	<% end %>
+  <%= javascript_include_tag "jquery.min", "jquery-ui-1.8.9.custom.min", "rails" %>
+	<%= javascript_include_tag "http://www.google.com/jsapi?key=ABQIAAAAFIlyhak8IJgCXqqm4wbfqhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQj4MFEvzdcnKGRCKkWp3f8O0YGPg" %>
+	<%= javascript_include_tag "gfeedfetcher" %>
+	<% CssAndJsFile.js.each do |js|%>
+  	<%= javascript_include_tag js.name+'.js' , :cache => '_'+js.name %>
+	<% end %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<div id="top-canvas">
+		<div id="top1"></div><div id="top2"></div><div id="top3"></div><div id="top4"></div>
+		<div id="headerWrapper">
+			<div id="header">
+				<div id="header-left">
+					<a href="/">
+						<img src="/images/logo.png" alt="SapnaSolutions Logo">
+					</a>
+					<div id="subtitle">
+						<%= t("heading").html_safe %>
+						<!--We are an Indo-European development company building awesome 
+						<strong>Web</strong>, <strong>Social</strong> &amp; <strong>Mobile</strong> apps-->
+					</div>
+				</div><!-- header-left -->
+				<div id="header-right">
+					<div id="languageLink">
+						<%= link_to image_tag("en.png", :alt => "English"), "/en"%>
+						<%= link_to image_tag("it.png", :alt => "Italiano"), "/it"%>
+						<%= link_to image_tag("de.png", :alt => "Deutsch"), "/de"%>
+					</div><!-- languageLink -->
+					<div id="contactBox"><img src="/images/contact_<%= I18n.locale.to_s %>.png" alt="Contact">
+						<p><%= t("find_out_more") %></p>
+						<!--<div class="email">
+						<script type="text/javascript">
+						var emailriddlerarray=[107,111,110,116,97,107,116,64,115,97,112,110,97,115,111,108,117,116,105,111,110,115,46,99,111,109]
+						var encryptedemail_id20='' //variable to contain encrypted email 
+						for (var i=0; i&lt;emailriddlerarray.length; i++)
+						 encryptedemail_id20+=String.fromCharCode(emailriddlerarray[i])
+						document.write('&lt;a href="mailto:'+encryptedemail_id20+'?subject=Mehr über SapnaSolutions..."&gt;kontakt@sapnasolutions.com&lt;/a&gt;')
+						</script><a href="mailto:kontakt@sapnasolutions.com?subject=Mehr über SapnaSolutions...">kontakt@sapnasolutions.com</a>
+						</div> -->
+					</div><!-- contactBox -->
+				</div><!-- header-right -->
+				<div class="clear"></div>
+				<div id="sapna_tabs">
+					<div class="tab_names core" id="sapna_tab_names">
+						<% @menu_pages.select{|m| m.parent_id.nil?}.sort{|x, y| x.position <=> y.position}.each do |menu| %>
+							<%= link_to menu.title, '/'+I18n.locale.to_s+menu.nested_path, :tabid => menu.title, :class=>"#{(@page == menu or menu.children.include?(@page)) ? 'tab_true' : 'tab_false	'}" %>
+						<% end %>
+						<div class="clear_both"></div>
+					</div><!-- sapna_tab_names -->
+					
+					
+					<div class="tab_contents core" id="sapna_tab_contents">
+						<% @menu_pages.select{|m| m.parent_id.nil?}.sort{|x, y| x.position <=> y.position}.each do |menu| %>
+							<div class="" id="sapna_<%= menu.title %>_contents">
+								<div class="x">
+									<% if @page == menu  or menu.children.include?(@page) %>
+										<div id="<%= menu.title %>" class="subNavLinks">
+											<% menu.children.select{|m| m.show_in_menu}.each do |sub_menu| %>
+												<%= "|" unless sub_menu == menu.children.select{|m| m.show_in_menu}.first %>
+												<%= link_to sub_menu.title, '/'+I18n.locale.to_s+sub_menu.nested_path, :tabid => sub_menu.title, :class => "#{@page == sub_menu ? 'bold' : ''}" %>
+											<% end %>
+										</div>
+									<% end %>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div><!-- sapna_tabs -->
+			</div><!-- header -->
+		</div><!--headerWrapper -->
+	</div><!-- top-canvas-->
+	<div id="top-bar">
+		<div id="subNav"></div>
+	</div>
+	<%= yield %>
+	
+	<div id="bottom-canvas">
+		<div id="footer">
+			<%= render :partial => "shared/footer"%>
+		</div>
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			try {
+				&lt;!-- /var pageTracker = _gat._getTracker("UA-7349142-1"); --&gt;
+				var pageTracker = _gat._getTracker("UA-10831875-1");
+				pageTracker._trackPageview();
+			} catch(err) {}
+		</script>
+		<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+	</div>
+	
+</body>
+</html>
+	

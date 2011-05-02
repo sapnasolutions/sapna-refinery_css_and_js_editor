@@ -1,0 +1,16 @@
+it:
+  admin:
+    pages:
+      page:
+        footer: footer
+        partial: partial
+  plugins:
+    jobs:
+      title: Jobs
+    portfolios:
+      title: Portfolio
+    members:
+      title: Members
+  heading: "Azienda Indo - Europea che realizza eccellenti applicazioni per <strong>Web</strong>, <strong>Social</strong> e <strong>Mobile</strong>"
+  find_out_more:  "Tel: (+39) 02 479 57 467"
+  not_online : Non disponibile online (applicazione interna per un cliente)

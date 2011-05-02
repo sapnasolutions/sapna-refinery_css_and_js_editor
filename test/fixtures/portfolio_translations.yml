@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  portfolio_id: 1
+  locale: MyString
+  name: MyString
+  description: MyText
+
+two:
+  portfolio_id: 1
+  locale: MyString
+  name: MyString
+  description: MyText

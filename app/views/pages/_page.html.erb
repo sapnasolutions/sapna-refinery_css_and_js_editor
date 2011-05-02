@@ -1,0 +1,24 @@
+<div id="canvas">
+	<div id="content">
+		<p style="color: red;">
+		</p>
+		<section id='body_content'>
+ 			<%=raw @page[:body] %>
+			<%= render :partial => "portfolios/portfolio", :collection => @page.portfolios %>
+			<% if @page.title.match('Jobs')%>
+				<script>
+					var feed=new gfeedfetcher("jobs_list", "jobs_list", "_new")
+					feed.addFeed("","http://sapna.jobscore.com/jobs/sapna/atom")
+	   			feed.displayoptions("description") //show the specified additional fields
+					feed.setentrycontainer("div") //Display each entry as a DIV
+					feed.filterfeed(50, "datetime") //Show 6 entries, sort by label
+					feed.init() //Always call this last
+				</script>
+			<% end %>
+		</section>
+		<section id='side_body_content'>
+		  <%=raw @page[:side_body] %>
+			<%= render :partial => "/shared/sidebar_partial"%>
+		</section>
+	</div>
+</div>

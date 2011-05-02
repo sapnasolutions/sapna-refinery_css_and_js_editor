@@ -1,0 +1,25 @@
+<div id="canvas">
+	<div id="content">
+		<p style="color: red;">
+		</p>
+		<section id='body_content'>
+ 			<%=raw @page[:body] %>
+			<% @jobs.each do |job| %>
+				<div class="job">
+					<h2 class="job-title">
+						<%= link_to job.title, "#"%>
+						<%= link_to "Apply Now", job.apply_url, :target => :blank, :class => "learn-more-right"%>
+					</h2>
+					<div class="desc" style="display:none;">
+						<div>
+							<%= job.description.html_safe %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</section>
+		<section id='side_body_content'>
+		  <%=raw @page[:side_body] %>
+		</section>
+	</div>
+</div>

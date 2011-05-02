@@ -1,0 +1,9 @@
+<% translation = portfolio.translations.find_by_locale(I18n.locale) %>
+<% if translation %>
+	<h2><%= translation.name %></h2>
+	<p><%= image_fu portfolio.photo, nil %></p>
+	<p><%= portfolio.url.blank? ? link_to(t('not_online'), "#") : link_to(portfolio.url, portfolio.url, :target => "blank")%></p>
+	<p>
+		<%= translation.description.html_safe %>
+	</p>
+<% end %>
