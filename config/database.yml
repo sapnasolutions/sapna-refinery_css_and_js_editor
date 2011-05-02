@@ -11,8 +11,8 @@
 login: &login
   adapter: postgresql
   encoding: unicode
-  username: postgres
-  password: postgres
+  username: surat
+  password: root
   pool: 5
   
 development: &development
@@ -53,5 +53,5 @@ production: &production
   encoding: unicode
   pool: 5
   database: sapnasolutions_production
-  username: root
+  username: surat
   password: root

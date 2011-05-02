@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(:version => 20110429090933) do
 
   add_index "css_and_js_files", ["id"], :name => "index_css_and_js_files_on_id"
 
-  create_table "css_files", :force => true do |t|
-    t.string   "name"
-    t.text     "css"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "css_files", ["id"], :name => "index_css_files_on_id"
-
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
     t.string   "image_name"
@@ -95,8 +85,8 @@ ActiveRecord::Schema.define(:version => 20110429090933) do
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
-    t.string   "title"
     t.string   "custom_title"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

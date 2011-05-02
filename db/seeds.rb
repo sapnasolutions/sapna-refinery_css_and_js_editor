@@ -1,17 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
 #Refinery seeds
 Dir[Rails.root.join('db', 'seeds', '*.rb').to_s].each do |file|
   puts "Loading db/seeds/#{file.split(File::SEPARATOR).last}"
   load(file)
 end
 require 'csv'
-CSV.foreach(File.open('db/seeds/members.csv')) do |row|
+CSV.foreach('db/seeds/members.csv') do |row|
   Member.create(:facebook_path => row[0], :name => row[1], :description => row[2]) unless row[1]=='name'
 end
 YAML.load_file("#{Rails.root}/db/seeds/portfolio.yml").each  do |k, v|
