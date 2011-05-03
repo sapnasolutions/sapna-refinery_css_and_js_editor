@@ -31,4 +31,4 @@ edit your 'application.html.erb' and add these lines
 	  	<%= javascript_include_tag js.name+'.js' , :cache => '_'+js.name %>
 		<% end %>
 
-Now you can see Css And Js Files tab after restarting your web server.
+Now you can see 'Css And Js Files' tab after restarting your web server.
