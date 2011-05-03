@@ -1,15 +1,25 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    css_and_js_files:
+      title: Css And Js Files
   admin:
-    pages:
-      page:
-        footer: footer
-        partial: partial
-  hello: "Hello world"
-  heading: "We are an Indo-European development company building awesome <strong>Web</strong>, <strong>Social</strong> & <strong>Mobile</strong> apps"
-  find_out_more: "Find out more about how SapnaSolutions can help you!"
-  not_online : Not available online (internal client application)
-  mail_address : contact@sapnasolutions.com
-  mail_subject : Tell me more about SapnaSolutions
+    css_and_js_files:
+      actions:
+        create_new: Add New Css And Js File
+        reorder: Reorder Css And Js Files
+        reorder_done: Done Reordering Css And Js Files
+      records:
+        title: Css And Js Files
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Css And Js Files yet. Click "Add New Css And Js File" to add your first css and js file.
+      css_and_js_file:
+        view_live_html: View this css and js file live <br/><em>(opens in a new window)</em>
+        edit: Edit this css and js file
+        delete: Remove this css and js file forever
+  css_and_js_files:
+    show:
+      other: Other Css And Js Files
