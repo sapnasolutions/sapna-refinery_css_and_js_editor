@@ -35,15 +35,9 @@
 					</div><!-- languageLink -->
 					<div id="contactBox"><img src="/images/contact_<%= I18n.locale.to_s %>.png" alt="Contact">
 						<p><%= t("find_out_more") %></p>
-						<!--<div class="email">
-						<script type="text/javascript">
-						var emailriddlerarray=[107,111,110,116,97,107,116,64,115,97,112,110,97,115,111,108,117,116,105,111,110,115,46,99,111,109]
-						var encryptedemail_id20='' //variable to contain encrypted email 
-						for (var i=0; i&lt;emailriddlerarray.length; i++)
-						 encryptedemail_id20+=String.fromCharCode(emailriddlerarray[i])
-						document.write('&lt;a href="mailto:'+encryptedemail_id20+'?subject=Mehr über SapnaSolutions..."&gt;kontakt@sapnasolutions.com&lt;/a&gt;')
-						</script><a href="mailto:kontakt@sapnasolutions.com?subject=Mehr über SapnaSolutions...">kontakt@sapnasolutions.com</a>
-						</div> -->
+						<div class="email">
+							<%= link_to t('mail_address'), "mailto:#{t('mail_address')}?subject=#{t('mail_subject')}"%>
+						</div>
 					</div><!-- contactBox -->
 				</div><!-- header-right -->
 				<div class="clear"></div>
