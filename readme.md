@@ -1,4 +1,4 @@
-# css_and_js_files plugin for [RefineryCMS](http://www.refinerycms.com) ([Github](https://github.com/suratpyari/refinery_css_and_js_files))
+# css_and_js_files plugin for [RefineryCMS](http://www.refinerycms.com) ([Github](https://github.com/sapnasolutions/sapna-refinery_css_and_js_editor))
 
 By: [Surat Pyari]()
 
@@ -12,16 +12,17 @@ This engine requires RefineryCMS version >= 0.9.9.16
 
 Ensure you have created your application's database
 
-Open your ``Gemfile`` and add this line to the bottom:
+Open your 'Gemfile' and add this line to the bottom:
 
     gem 'refinerycms-css_and_js_file'
 
-Now run ``bundle install`` and once bundler has installed the gem run:
+Now run:
 
+		bundle install
     rails generate refinerycms_css_and_js_files
     rake db:migrate
 
-edit your application.html.erb and add these lines
+edit your 'application.html.erb' and add these lines
 
 		<% CssAndJsFile.css.each do |css|%>
 	  	<%= stylesheet_link_tag css.name+'.css' , :cache => '_'+css.name %>
@@ -30,4 +31,4 @@ edit your application.html.erb and add these lines
 	  	<%= javascript_include_tag js.name+'.js' , :cache => '_'+js.name %>
 		<% end %>
 
-Now, restart your web server and enjoy.
+Now you can see Css And Js Files tab after restarting your web server.
