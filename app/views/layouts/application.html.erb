@@ -52,10 +52,11 @@
 					
 					<div class="tab_contents core" id="sapna_tab_contents">
 						<% @menu_pages.select{|m| m.parent_id.nil?}.sort{|x, y| x.position <=> y.position}.each do |menu| %>
-							<div class="" id="sapna_<%= menu.title %>_contents">
+							<div class="" id="sapna_<%= menu.title(:en) %>_contents">
 								<div class="x">
 									<% if @page == menu  or menu.children.include?(@page) %>
-										<div id="<%= menu.title %>" class="subNavLinks">
+										<% debugger %>
+										<div id="<%= menu.title(:en) %>" class="subNavLinks">
 											<% menu.children.select{|m| m.show_in_menu}.each do |sub_menu| %>
 												<%= "|" unless sub_menu == menu.children.select{|m| m.show_in_menu}.first %>
 												<%= link_to sub_menu.title, '/'+I18n.locale.to_s+sub_menu.nested_path, :tabid => sub_menu.title, :class => "#{@page == sub_menu ? 'bold' : ''}" %>
