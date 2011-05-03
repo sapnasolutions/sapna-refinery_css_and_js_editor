@@ -1,0 +1,8 @@
+db/schema.rb
+log/*.log
+tmp/**/*
+test/*
+config/database.yml
+tmp/*.*
+public/system/
+Gemfile.lock
