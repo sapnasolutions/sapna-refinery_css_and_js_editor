@@ -32,3 +32,5 @@ edit your 'application.html.erb' and add these lines
 		<% end %>
 
 Now you can see 'Css And Js Files' tab after restarting your web server.
+
+Note: If you are using Heroku then this will not work as files on Heroku are readonly so you can't be overwrite or delete css and js files
