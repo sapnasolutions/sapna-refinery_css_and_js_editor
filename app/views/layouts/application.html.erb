@@ -55,7 +55,6 @@
 							<div class="" id="sapna_<%= menu.title(:en) %>_contents">
 								<div class="x">
 									<% if @page == menu  or menu.children.include?(@page) %>
-										<% debugger %>
 										<div id="<%= menu.title(:en) %>" class="subNavLinks">
 											<% menu.children.select{|m| m.show_in_menu}.each do |sub_menu| %>
 												<%= "|" unless sub_menu == menu.children.select{|m| m.show_in_menu}.first %>
