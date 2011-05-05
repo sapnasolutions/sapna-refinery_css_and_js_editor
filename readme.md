@@ -2,7 +2,7 @@
 
 By: [Surat Pyari]()
 
-This Plugin allows you to write/edit css and javascript files without restarting the server.
+This engine allows you to write/edit css and javascript files without restarting the server.
 
 ## Requirements
 
